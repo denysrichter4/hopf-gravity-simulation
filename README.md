@@ -1,7 +1,7 @@
 # Emergent Coulomb Potentials and Orbital Quantization via Classical Dynamics on $S^3$-Hopf Fibrations
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.18136027)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.18141472)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 
 **Author:** Denys Arthur Richter Alves  
