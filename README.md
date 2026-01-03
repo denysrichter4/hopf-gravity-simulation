@@ -1,4 +1,4 @@
-# Emergent Coulomb Potentials and Orbital Quantization via Classical Dynamics on $S^3$-Hopf Fibrations
+# Visualizing the Kustaanheimo-Stiefel Regularization: A Computational Approach to Semi-Classical Orbitals in $S^3$
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.18141472)
@@ -6,123 +6,96 @@
 
 **Author:** Denys Arthur Richter Alves  
 **Date:** January 2026  
-**Status:** Proof of Concept / Academic Preprint
+**License:** MIT  
+**Status:** Educational / Computational Physics
 
-![Project Status](https://img.shields.io/badge/Physics-Unified-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Physics](https://img.shields.io/badge/Physics-Semi--Classical-orange)
 
 ---
 
-## 🌌 Abstract
+## 🔭 Overview
 
-The reconciliation of General Relativity (geometric determinism) and Quantum Mechanics (probabilistic indeterminism) remains the central challenge of modern physics. This project presents a computational framework where fundamental quantum phenomena emerge from strictly deterministic dynamics in a 4-dimensional hyperspherical manifold ($S^3$).
+This project provides a real-time Python visualization of the **Kustaanheimo-Stiefel (KS) Regularization**, a mathematical transformation that maps the 3D Kepler problem (planetary/atomic motion) to a 4-dimensional Harmonic Oscillator constrained to a hypersphere ($S^3$).
 
-We demonstrate that a classical harmonic oscillator confined to $S^3$ geometry and projected onto $\mathbb{R}^3$ via the Hopf Fibration naturally reproduces:
-1.  **The Coulomb Potential ($1/r$):** Derived purely from 4D geometric constraints.
-2.  **Atomic Stability:** Numerical validation reveals a Virial Ratio of $\approx 0.500$, consistent with hydrogen-like systems.
-3.  **Orbital Quantization:** The emergence of discrete topological structures indistinguishable from Schrödinger’s probability orbitals.
+While often treated abstractly in celestial mechanics literature, this project explores the **geometric intuition** behind the mapping. By evolving a classical particle in 4D and projecting it via the **Hopf Fibration**, we recover 3D trajectories that respect the $1/r$ Coulomb potential.
+
+Furthermore, we implement a **semi-classical visualization technique** (imposing a De Broglie phase condition on the classical trajectory) to generate probability density shells that visually approximate Hydrogen-like orbitals, offering a pedagogical tool to understand the connection between classical geometry and quantum topologies.
+
+> **Disclaimer:** This is a computational "toy model" for educational and visualization purposes. It demonstrates geometric regularizations of classical mechanics and does not represent a unified theory of quantum gravity or a replacement for the Schrödinger equation.
 
 ---
 
 ## 📂 Repository Structure
 
-This repository contains the source code used to validate the theory presented in the paper.
-
 | File | Description |
 | :--- | :--- |
-| `main_simulation.py` | **The Core Simulation.** Generates the 4D trajectory and visualizes the emergent "electron cloud" and topological twists. (Generates Figure 1) |
-| `validation_metrics.py` | **The Mathematical Proof.** Runs the physics engine in "Metrology Mode" to calculate the Virial Ratio ($\langle T \rangle / \langle V \rangle$). Validates the discovery parameters ($K=12.98$, $Spin=5.0$). |
-| `visual_comparison.py` | **The "Turing Test" for Orbitals.** Runs the simulation side-by-side with an analytical Schrödinger wavefunction solver to visually compare the geometric shell vs. quantum probability density. |
-
-*(Note: These files correspond to the finalized scripts `4d_earth_simulation_nobel_candidate.py`, `4d_earth_simulation_quantic_proof_2.py`, etc., renamed for clarity)*
+| `main_simulation.py` | **The Core Visualizer.** Simulates the 4D Harmonic Oscillator and projects the trajectory to 3D. Renders the emergent "electron cloud" using phase-based filtering. |
+| `validation_metrics.py` | **Numerical Validation.** Runs the physics engine without visualization to calculate the Virial Ratio ($\langle T \rangle / \langle V \rangle$). Verifies that the 4D Spring ($F \propto -r$) successfully maps to a 3D Coulomb field ($F \propto 1/r^2$). |
+| `visual_comparison.py` | **Side-by-Side Comparison.** Displays the geometric simulation next to an analytical solution of the Schrödinger equation ($|\psi|^2$) for visual comparison of orbital shapes. |
 
 ---
 
 ## 🚀 Key Results
 
-### 1. The "Virial 0.5" Discovery
-By strictly following a 4D Harmonic Oscillator model ($F = -kx$), the projected 3D system exhibits the statistical behavior of a Coulomb system ($F \propto 1/r^2$).
+### 1. Numerical Stability (The Virial Test)
+A hallmark of the KS regularization is transforming the singular Coulomb potential into a regular harmonic one. Our numerical integrator confirms this relationship by recovering the Hydrogen Virial Ratio from purely harmonic parameters.
 
 ```text
---- PRECISION MEASUREMENTS ---
-Parameters: K=12.98, Spin=5.0
-1. Average Total Energy: 9.739968
-2. Virial Ratio (<T>/<V>): 0.500765  <-- MATCHES HYDROGEN (0.5)
+--- METROLOGY RESULTS ---
+Parameters: K=12.98 (Harmonic), Spin=5.0
+Virial Ratio (<T>/<V>): 0.5007  <-- Matches Coulomb System (0.5)
 
 ```
 
-### 2. Emergent Orbitals
+### 2. Geometric "Orbitals"
 
-The simulation (Cyan) generates topological shells that match the isosurfaces of the Schrödinger equation (Green).
+By tracking the 4D trajectory over time and applying a phase filter (), we reveal the topological structure of the projected manifold. The resulting toroidal shapes bear a striking resemblance to spin-weighted spherical harmonics ().
 
-| **Geometric Simulation (Ours)** | **Quantum Reality (Schrödinger)** |
-| --- | --- |
-|  |  |
-| *(Replace these placeholders with your actual screenshots in the /results folder)* |  |
+*(Place your `figure1.png` or `video.mp4` here showing the green/cyan cloud)*
 
 ---
 
 ## 🛠️ Installation & Usage
 
-### Prerequisites
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/denysrichter4/hopf-gravity-simulation.git](https://github.com/denysrichter4/hopf-gravity-simulation.git)
 
-You need Python 3.8+ and standard scientific libraries.
+```
 
+
+2. **Install dependencies:**
 ```bash
 pip install numpy matplotlib scipy
 
 ```
 
-### Running the Proofs
 
-**1. To verify the Virial Ratio (Mathematical Proof):**
-
-```bash
-python validation_metrics.py
-
-```
-
-**2. To visualize the Quantum Comparison:**
-
-```bash
-python visual_comparison.py
-
-```
-
-**3. To run the full 4D simulation:**
-
+3. **Run the simulation:**
 ```bash
 python main_simulation.py
 
 ```
 
----
 
-## 🧠 Theoretical Background
-
-### The Hamiltonian
-
-The particle moves in  under a Lagrangian:
-$$ \mathcal{L} = \frac{1}{2}m (\dot{q} \cdot \dot{q}) - \frac{1}{2} K (q \cdot q) $$
-Subject to the constraint  (it lives on the 3-sphere).
-
-### The Projection
-
-We observe the shadow of this particle via the Hopf Map :
-$$ \vec{r} = (2(q_1 q_3 + q_2 q_4), 2(q_2 q_3 - q_1 q_4), q_1^2 + q_2^2 - q_3^2 - q_4^2) $$
-
-This non-linear projection transforms the harmonic potential into a gravitational/electrostatic one, suggesting that **Gravity is the shadow of 4D Elasticity.**
 
 ---
 
-## 📄 Citation
+## 📚 Theoretical Background
 
-If you use this code or concepts in your research, please cite:
+The simulation relies on the isomorphism between the dynamics in  and :
 
-> Richter, D. (2026). *Emergent Coulomb Potentials and Orbital Quantization via Classical Dynamics on -Hopf Fibrations*. GitHub Repository.
+1. **4D Space:** A particle moves under a Harmonic Potential .
+2. **Constraint:** The particle is confined to the fiber bundle .
+3. **Projection:** The Hopf Map  projects coordinates:
+$$ \vec{x} = \langle q | \vec{\sigma} | q \rangle $$
+where  are Pauli matrices.
+
+This transformation regularizes the collision with the nucleus (singularity at  in 3D becomes a smooth passage in 4D), making it a powerful tool for N-body simulations.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the **MIT License**.
