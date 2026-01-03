@@ -32,7 +32,7 @@ Furthermore, we implement a **semi-classical visualization technique** (imposing
 
 ![Simulation Animation](simulation2.gif)
 
-![Simulation Animation](simulation3.gif)
+![Simulation Animation](simulation3.png)
 
 ## 📂 Repository Structure
 
