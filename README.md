@@ -28,6 +28,11 @@ Furthermore, we implement a **semi-classical visualization technique** (imposing
 
 ## Simulations
 
+![Simulation Animation](simulation1.gif)
+
+![Simulation Animation](simulation2.gif)
+
+![Simulation Animation](simulation3.gif)
 
 ## 📂 Repository Structure
 
