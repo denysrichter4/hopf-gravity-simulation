@@ -26,6 +26,9 @@ Furthermore, we implement a **semi-classical visualization technique** (imposing
 
 ---
 
+## Simulations
+
+
 ## 📂 Repository Structure
 
 | File | Description |
